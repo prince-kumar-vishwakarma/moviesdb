@@ -13,11 +13,11 @@ var main_URL = MOVIE_URL;
 moivesDes(main_URL);
 
 async function moivesDes(url) {
-    // console.log(url);
+    console.log(url);
     let moviesRaw = await fetch(url);
     let moviesJson = await moviesRaw.json();
     var { page, total_pages } = moviesJson;
-    // console.log(page);
+    console.log(page);
     const pageUpdate = document.querySelector('.page-update');
     if (total_pages == 1) {
         pageUpdate.style.display = 'none';
@@ -25,6 +25,7 @@ async function moivesDes(url) {
     else {
         pageUpdate.style.display = 'flex';
     }
+    console.log(moviesJson.results.length)
     if (moviesJson.results.length === 0)
         alert('No Result Found for ' + inp.value);
     else
@@ -59,6 +60,7 @@ function showMovies(movies) {
     });
 }
 
+let pageNo = 1;
 
 function search() {
     let btn = document.querySelector(".searchBtn");
@@ -75,20 +77,13 @@ function search() {
 }
 search();
 
+document.querySelector('header span').addEventListener('click', () => { moivesDes(MOVIE_URL); })
+document.querySelector('nav .leftNav ul li:first-child').addEventListener('click', () => { moivesDes(MOVIE_URL); })
+
+
 const popular = document.querySelector('#popular');
 const topURL = document.querySelector('#top');
 const upcoming = document.querySelector('#upcoming');
-
-
-
-let pageNo = 1;
-
-const nextPage = document.querySelector('.next-page');
-const prevPage = document.querySelector('.prev-page');
-
-const currentPageValue = document.querySelector('.current-page-value');
-const nextPageValue = document.querySelector('.next-page-value');
-
 
 popular.addEventListener('click', () => {
     pageNo = 1;
@@ -109,7 +104,12 @@ upcoming.addEventListener('click', () => {
     moivesDes(main_URL + pageNo);
 });
 
+
 function pageChange() {
+    const nextPage = document.querySelector('.next-page');
+    const prevPage = document.querySelector('.prev-page');
+    const currentPageValue = document.querySelector('.current-page-value');
+    const nextPageValue = document.querySelector('.next-page-value');
     nextPage.addEventListener('click', () => {
         pageNo++;
         document.body.scrollTop = 0;
