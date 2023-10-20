@@ -40,9 +40,11 @@ html,body{
 
 
 header{
-    font-size: 3rem;
     width: 100%;
     padding: 1rem 2rem;
+}
+header span{
+    font-size: 3rem;
     color: #CC0100;
 }
 nav{
