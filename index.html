@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie DBMS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <header>Movie Search</header>
+        <nav>
+            <div class="leftNav">
+                <ul>
+                    <li>MOVIE</li>
+                    <li id="popular">Popular <span>Movies</span></li>
+                    <li id="top">Top <span>Movies</span></li>
+                    <li id="upcoming">Upcoming <span>Movies</span></li>
+                </ul>
+            </div>
+            <form class="rightNav">
+                <input type="text" placeholder="Search...">
+                <button type="submit" class="searchBtn"><i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
+        </nav>
+        <main class="container">
+
+        </main>
+        <div class="page-update">
+            <small class="prev-page" href=""><i class="fa-solid fa-angle-left"></i></small>
+            <small class="current-page-value" href="">1</small>
+            <small class="next-page-value" href="">2</small>
+            <small href="">...</small>
+            <small class="next-page" href=""><i class="fa-solid fa-angle-right"></i></small>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
