@@ -53,7 +53,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 1rem 2rem;
     z-index: 999;
     background-color: #2B3433;
     position: relative;
@@ -133,8 +133,6 @@ nav .leftNav ul li:active{
 }
 
 
-/* https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&with_release_type=2|3&release_date.gte={min_date}&release_date.lte={max_date}&page=1 */
-
 .container{
     display: flex;
     justify-content: center;
@@ -211,14 +209,14 @@ nav .leftNav ul li:active{
 }
 .overview h2{
     color: black;
-    font-size: 22px;
+    font-size: 2.2rem;
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 0.8rem;
 }
 
 .overview p{
     color: black;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-family: monospace;
 }
 
@@ -226,11 +224,11 @@ nav .leftNav ul li:active{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 2rem;
     height: 5rem;
     width: 100%;
     background-color: #282F2E;
-    margin-top: 50px;
+    margin-top: 5rem;
 }
 
 .page-update small{
@@ -247,11 +245,13 @@ nav .leftNav ul li:active{
     cursor: pointer;
 }
 .page-update small:nth-child(2){
-    /* background-color: #CC0100; */
     background-image: linear-gradient(90deg, #870707,#CC0100);
 }
 
 @media (max-width:550px) {
+    .container{
+        gap: 5px;
+    }
     .movieCard{
         width: 200px;
     }
@@ -264,6 +264,7 @@ nav .leftNav ul li:active{
     .movieInfo h1{
         font-size: 1.9rem;
     }
+
     /* nav .leftNav ul li:first-child{
         display: none;
     }
@@ -271,4 +272,19 @@ nav .leftNav ul li:active{
         display: none;
     } */
     
+}
+
+@media (max-width:550px){
+    html{
+        font-size: 50%;
+    }
+    .movieCard{
+        width: 49%;
+    }
+    .container{
+        gap: 1px;
+    }
+    .page-update{
+        margin-top: 3rem;
+    }
 }
