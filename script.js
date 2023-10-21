@@ -46,7 +46,7 @@ function showMovies(movies) {
             </div>
             <div class="movieInfo">
                 <h1>${title}</h1>
-                <h2>Release Year: <span>${release_date}</span></h2>
+                <h2>Release Date: <span>${release_date}</span></h2>
                 <h2>Type: <span>Movie</span></h2>
                 <h2>imdb: <span>${vote_average}</span></h2>
                 </div>
