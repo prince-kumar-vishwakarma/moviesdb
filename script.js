@@ -17,7 +17,6 @@ async function moivesDes(url) {
     let moviesRaw = await fetch(url);
     let moviesJson = await moviesRaw.json();
     var { page, total_pages } = moviesJson;
-    console.log(page);
     const pageUpdate = document.querySelector('.page-update');
     if (total_pages == 1) {
         pageUpdate.style.display = 'none';
@@ -25,10 +24,10 @@ async function moivesDes(url) {
     else {
         pageUpdate.style.display = 'flex';
     }
-    if (moviesJson.results.length === 0){
+    if (moviesJson.results.length === 0) {
         alert('No Result Found for ' + inp.value);
     }
-    else{
+    else {
         showMovies(moviesJson.results);
     }
 }
@@ -87,8 +86,8 @@ function search() {
 }
 search();
 
-document.querySelector('header span').addEventListener('click', () => { moivesDes(MOVIE_URL); })
-document.querySelector('nav .leftNav ul li:first-child').addEventListener('click', () => { moivesDes(MOVIE_URL); })
+document.querySelector('header span').addEventListener('click', () => { moivesDes(MOVIE_URL); });
+document.querySelector('nav .leftNav ul li:first-child').addEventListener('click', () => { moivesDes(MOVIE_URL); });
 
 
 const popular = document.querySelector('#popular');
