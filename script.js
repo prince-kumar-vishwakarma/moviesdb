@@ -60,6 +60,8 @@ function showMovies(movies) {
     });
 }
 
+const currentPageValue = document.querySelector('.current-page-value');
+const nextPageValue = document.querySelector('.next-page-value');
 let pageNo = 1;
 
 function search() {
@@ -70,6 +72,13 @@ function search() {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+        let oldvalue = '$^^%$^&***^';
+        if (oldvalue !== inp.value) {
+            pageNo = 1;
+            currentPageValue.innerHTML = pageNo;
+            nextPageValue.innerHTML = pageNo + 1;
+        }
+        oldvalue = inp.value;
         main_URL = MOVIE_SEARH_URL + inp.value + '&page=';
         moivesDes(inp.value === '' ? window.location.reload() : main_URL + pageNo);
     });
@@ -108,8 +117,7 @@ upcoming.addEventListener('click', () => {
 function pageChange() {
     const nextPage = document.querySelector('.next-page');
     const prevPage = document.querySelector('.prev-page');
-    const currentPageValue = document.querySelector('.current-page-value');
-    const nextPageValue = document.querySelector('.next-page-value');
+
     nextPage.addEventListener('click', () => {
         pageNo++;
         document.body.scrollTop = 0;
