@@ -1,4 +1,4 @@
-let IMG_URL = 'https://image.tmdb.org/t/p/w342'
+let IMG_URL = 'https://image.tmdb.org/t/p/w342';
 let MOVIE_URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=1d3b93f2bc047a14fbfc9655f66b9e1e&page=`;
 let MOVIE_SEARH_URL = 'https://api.themoviedb.org/3/search/movie?api_key=1d3b93f2bc047a14fbfc9655f66b9e1e&query=';
 let MOVIE_POPULAR_URL = `https://api.themoviedb.org/3/movie/popular?sort_by=popularity.desc&api_key=1d3b93f2bc047a14fbfc9655f66b9e1e&page=`;
@@ -25,11 +25,12 @@ async function moivesDes(url) {
     else {
         pageUpdate.style.display = 'flex';
     }
-    console.log(moviesJson.results.length)
-    if (moviesJson.results.length === 0)
+    if (moviesJson.results.length === 0){
         alert('No Result Found for ' + inp.value);
-    else
+    }
+    else{
         showMovies(moviesJson.results);
+    }
 }
 
 function showMovies(movies) {
